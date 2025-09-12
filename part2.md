@@ -10,17 +10,17 @@
 
 ### DDLから「素の」オントロジーを生成する
 
-NorthwindのDDLを拾ってきて、早速Gemimi CLIに[MermaidでER図](https://github.com/Yoshiyuki-iasa/northwind/northwind_schema.md)を書いてもらう。
+NorthwindのDDLを拾ってきて、早速Gemimi CLIに[MermaidでER図](https://github.com/Yoshiyuki-iasa/northwind/blob/main/northwind_schema.md)を書いてもらう。
 
 これらのテーブルや属性の説明を、これからオントロジーで書いていくわけだが、DDLはオントロジーには存在しない概念 (例えばオントロジーエディタはDDLを解釈できない) なので、オントロジーで通用する何らかの概念なりオブジェクトなりに置き換える必要がある。
 
-ここで登場するのがSHACLである。これは本来グラフデータのバリデーションルールを書くためのもので、SQLテーブルの物理メタ表現に使える、といった直接の言及はネット上にも存在しない。しかし型制約なんてグラフデータもSQLテーブルも似たようなものだろう。そんな素人考えも今や生成AIのおかげで簡単に検証出来るようになった。人間は知らなくとも、Geminiはそれが可能であることを知っていて、実際に[SHACLも書いてくれる](https://github.com/Yoshiyuki-iasa/northwind/instnwnd.shacl.ttl)のである。
+ここで登場するのがSHACLである。これは本来グラフデータのバリデーションルールを書くためのもので、SQLテーブルの物理メタ表現に使える、といった直接の言及はネット上にも存在しない。しかし型制約なんてグラフデータもSQLテーブルも似たようなものだろう。そんな素人考えも今や生成AIのおかげで簡単に検証出来るようになった。人間は知らなくとも、Geminiはそれが可能であることを知っていて、実際に[SHACLも書いてくれる](https://github.com/Yoshiyuki-iasa/northwind/blob/main/instnwnd.shacl.ttl)のである。
 
 もちろんこれは抜け漏れも有りえる「近似値」であり、コマーシャルなサービスでは、データソースの種類別にSHACL生成プログラムを用意するべきであろう (Geminiもおそらく内部的にDDLを解析、Pythonだかでコードを生成・実行している)。しかしなんのことはない、クローラが自動収集したり、或いは手で書いたりする物理メタの形式をSHACLにするだけの話である。
 
-このSHACLファイルから連続技でオントロジーを生成する。これもそんなことはネットに書いてないが、バリデーションルールからその対象も当然リバース出来るだろう、という思いつきである。[出来たファイル](https://github.com/Yoshiyuki-iasa/northwind/northwind_ontology_pt2.ttl)はProtégéでもちゃんと開くことが出来る。
+このSHACLファイルから連続技でオントロジーを生成する。これもそんなことはネットに書いてないが、バリデーションルールからその対象も当然リバース出来るだろう、という思いつきである。[出来たファイル](https://github.com/Yoshiyuki-iasa/northwind/blob/main/northwind_ontology_pt2.ttl)はProtégéでもちゃんと開くことが出来る。
 
-このオントロジーファイルから[クラス図](https://github.com/Yoshiyuki-iasa/northwind/northwind_ontology_diagram.md)を起こすこともできる。最初にDDLから生成したER図と見比べてみると、大体合っていそうであることがわかる。
+このオントロジーファイルから[クラス図](https://github.com/Yoshiyuki-iasa/northwind/blob/main/northwind_ontology_diagram.md)を起こすこともできる。最初にDDLから生成したER図と見比べてみると、大体合っていそうであることがわかる。
 
 これは現段階では物理メタしか持たない「素の」オントロジーである。データソースやDDLがあればここまで自動生成であり、クローラで物理メタを拾ってくるのと何ら変わりはない。
 
