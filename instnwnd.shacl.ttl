@@ -1,0 +1,676 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix nw: <http://example.org/northwind#> .
+
+# SHACL Shapes for Northwind Database
+
+# Employees
+nw:EmployeeShape
+  a sh:NodeShape ;
+  sh:targetClass nw:Employees ;
+  sh:property [
+    sh:path nw:EmployeeID ;
+    sh:datatype xsd:integer ;
+    sh:name "EmployeeID" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:LastName ;
+    sh:datatype xsd:string ;
+    sh:name "LastName" ;
+    sh:minLength 1 ;
+    sh:maxLength 20 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:FirstName ;
+    sh:datatype xsd:string ;
+    sh:name "FirstName" ;
+    sh:minLength 1 ;
+    sh:maxLength 10 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Title ;
+    sh:datatype xsd:string ;
+    sh:name "Title" ;
+    sh:maxLength 30 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:TitleOfCourtesy ;
+    sh:datatype xsd:string ;
+    sh:name "TitleOfCourtesy" ;
+    sh:maxLength 25 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:BirthDate ;
+    sh:datatype xsd:dateTime ;
+    sh:name "BirthDate" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:HireDate ;
+    sh:datatype xsd:dateTime ;
+    sh:name "HireDate" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Address ;
+    sh:datatype xsd:string ;
+    sh:name "Address" ;
+    sh:maxLength 60 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:City ;
+    sh:datatype xsd:string ;
+    sh:name "City" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Region ;
+    sh:datatype xsd:string ;
+    sh:name "Region" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:PostalCode ;
+    sh:datatype xsd:string ;
+    sh:name "PostalCode" ;
+    sh:maxLength 10 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Country ;
+    sh:datatype xsd:string ;
+    sh:name "Country" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:HomePhone ;
+    sh:datatype xsd:string ;
+    sh:name "HomePhone" ;
+    sh:maxLength 24 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Extension ;
+    sh:datatype xsd:string ;
+    sh:name "Extension" ;
+    sh:maxLength 4 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Notes ;
+    sh:datatype xsd:string ;
+    sh:name "Notes" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ReportsTo ;
+    sh:name "ReportsTo" ;
+    sh:class nw:Employees ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:PhotoPath ;
+    sh:datatype xsd:string ;
+    sh:name "PhotoPath" ;
+    sh:maxLength 255 ;
+    sh:maxCount 1 ;
+  ] .
+
+# Categories
+nw:CategoryShape
+  a sh:NodeShape ;
+  sh:targetClass nw:Categories ;
+  sh:property [
+    sh:path nw:CategoryID ;
+    sh:datatype xsd:integer ;
+    sh:name "CategoryID" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:CategoryName ;
+    sh:datatype xsd:string ;
+    sh:name "CategoryName" ;
+    sh:minLength 1 ;
+    sh:maxLength 15 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Description ;
+    sh:datatype xsd:string ;
+    sh:name "Description" ;
+    sh:maxCount 1 ;
+  ] .
+
+# Customers
+nw:CustomerShape
+  a sh:NodeShape ;
+  sh:targetClass nw:Customers ;
+  sh:property [
+    sh:path nw:CustomerID ;
+    sh:datatype xsd:string ;
+    sh:name "CustomerID" ;
+    sh:minLength 5 ;
+    sh:maxLength 5 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:CompanyName ;
+    sh:datatype xsd:string ;
+    sh:name "CompanyName" ;
+    sh:minLength 1 ;
+    sh:maxLength 40 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ContactName ;
+    sh:datatype xsd:string ;
+    sh:name "ContactName" ;
+    sh:maxLength 30 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ContactTitle ;
+    sh:datatype xsd:string ;
+    sh:name "ContactTitle" ;
+    sh:maxLength 30 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Address ;
+    sh:datatype xsd:string ;
+    sh:name "Address" ;
+    sh:maxLength 60 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:City ;
+    sh:datatype xsd:string ;
+    sh:name "City" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Region ;
+    sh:datatype xsd:string ;
+    sh:name "Region" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:PostalCode ;
+    sh:datatype xsd:string ;
+    sh:name "PostalCode" ;
+    sh:maxLength 10 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Country ;
+    sh:datatype xsd:string ;
+    sh:name "Country" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Phone ;
+    sh:datatype xsd:string ;
+    sh:name "Phone" ;
+    sh:maxLength 24 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Fax ;
+    sh:datatype xsd:string ;
+    sh:name "Fax" ;
+    sh:maxLength 24 ;
+    sh:maxCount 1 ;
+  ] .
+
+# Shippers
+nw:ShipperShape
+  a sh:NodeShape ;
+  sh:targetClass nw:Shippers ;
+  sh:property [
+    sh:path nw:ShipperID ;
+    sh:datatype xsd:integer ;
+    sh:name "ShipperID" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:CompanyName ;
+    sh:datatype xsd:string ;
+    sh:name "CompanyName" ;
+    sh:minLength 1 ;
+    sh:maxLength 40 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Phone ;
+    sh:datatype xsd:string ;
+    sh:name "Phone" ;
+    sh:maxLength 24 ;
+    sh:maxCount 1 ;
+  ] .
+
+# Suppliers
+nw:SupplierShape
+  a sh:NodeShape ;
+  sh:targetClass nw:Suppliers ;
+  sh:property [
+    sh:path nw:SupplierID ;
+    sh:datatype xsd:integer ;
+    sh:name "SupplierID" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:CompanyName ;
+    sh:datatype xsd:string ;
+    sh:name "CompanyName" ;
+    sh:minLength 1 ;
+    sh:maxLength 40 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ContactName ;
+    sh:datatype xsd:string ;
+    sh:name "ContactName" ;
+    sh:maxLength 30 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ContactTitle ;
+    sh:datatype xsd:string ;
+    sh:name "ContactTitle" ;
+    sh:maxLength 30 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Address ;
+    sh:datatype xsd:string ;
+    sh:name "Address" ;
+    sh:maxLength 60 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:City ;
+    sh:datatype xsd:string ;
+    sh:name "City" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Region ;
+    sh:datatype xsd:string ;
+    sh:name "Region" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:PostalCode ;
+    sh:datatype xsd:string ;
+    sh:name "PostalCode" ;
+    sh:maxLength 10 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Country ;
+    sh:datatype xsd:string ;
+    sh:name "Country" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Phone ;
+    sh:datatype xsd:string ;
+    sh:name "Phone" ;
+    sh:maxLength 24 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Fax ;
+    sh:datatype xsd:string ;
+    sh:name "Fax" ;
+    sh:maxLength 24 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:HomePage ;
+    sh:datatype xsd:string ;
+    sh:name "HomePage" ;
+    sh:maxCount 1 ;
+  ] .
+
+# Orders
+nw:OrderShape
+  a sh:NodeShape ;
+  sh:targetClass nw:Orders ;
+  sh:property [
+    sh:path nw:OrderID ;
+    sh:datatype xsd:integer ;
+    sh:name "OrderID" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:CustomerID ;
+    sh:name "CustomerID" ;
+    sh:class nw:Customers ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:EmployeeID ;
+    sh:name "EmployeeID" ;
+    sh:class nw:Employees ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:OrderDate ;
+    sh:datatype xsd:dateTime ;
+    sh:name "OrderDate" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:RequiredDate ;
+    sh:datatype xsd:dateTime ;
+    sh:name "RequiredDate" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ShippedDate ;
+    sh:datatype xsd:dateTime ;
+    sh:name "ShippedDate" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ShipVia ;
+    sh:name "ShipVia" ;
+    sh:class nw:Shippers ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Freight ;
+    sh:datatype xsd:decimal ;
+    sh:name "Freight" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ShipName ;
+    sh:datatype xsd:string ;
+    sh:name "ShipName" ;
+    sh:maxLength 40 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ShipAddress ;
+    sh:datatype xsd:string ;
+    sh:name "ShipAddress" ;
+    sh:maxLength 60 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ShipCity ;
+    sh:datatype xsd:string ;
+    sh:name "ShipCity" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ShipRegion ;
+    sh:datatype xsd:string ;
+    sh:name "ShipRegion" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ShipPostalCode ;
+    sh:datatype xsd:string ;
+    sh:name "ShipPostalCode" ;
+    sh:maxLength 10 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ShipCountry ;
+    sh:datatype xsd:string ;
+    sh:name "ShipCountry" ;
+    sh:maxLength 15 ;
+    sh:maxCount 1 ;
+  ] .
+
+# Products
+nw:ProductShape
+  a sh:NodeShape ;
+  sh:targetClass nw:Products ;
+  sh:property [
+    sh:path nw:ProductID ;
+    sh:datatype xsd:integer ;
+    sh:name "ProductID" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ProductName ;
+    sh:datatype xsd:string ;
+    sh:name "ProductName" ;
+    sh:minLength 1 ;
+    sh:maxLength 40 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:SupplierID ;
+    sh:name "SupplierID" ;
+    sh:class nw:Suppliers ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:CategoryID ;
+    sh:name "CategoryID" ;
+    sh:class nw:Categories ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:QuantityPerUnit ;
+    sh:datatype xsd:string ;
+    sh:name "QuantityPerUnit" ;
+    sh:maxLength 20 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:UnitPrice ;
+    sh:datatype xsd:decimal ;
+    sh:name "UnitPrice" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:UnitsInStock ;
+    sh:datatype xsd:short ;
+    sh:name "UnitsInStock" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:UnitsOnOrder ;
+    sh:datatype xsd:short ;
+    sh:name "UnitsOnOrder" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ReorderLevel ;
+    sh:datatype xsd:short ;
+    sh:name "ReorderLevel" ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Discontinued ;
+    sh:datatype xsd:boolean ;
+    sh:name "Discontinued" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .
+
+# Order Details
+nw:OrderDetailShape
+  a sh:NodeShape ;
+  sh:targetClass nw:Order_Details ;
+  sh:property [
+    sh:path nw:OrderID ;
+    sh:name "OrderID" ;
+    sh:class nw:Orders ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:ProductID ;
+    sh:name "ProductID" ;
+    sh:class nw:Products ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:UnitPrice ;
+    sh:datatype xsd:decimal ;
+    sh:name "UnitPrice" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Quantity ;
+    sh:datatype xsd:short ;
+    sh:name "Quantity" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:Discount ;
+    sh:datatype xsd:float ;
+    sh:name "Discount" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .
+
+# Region
+nw:RegionShape
+  a sh:NodeShape ;
+  sh:targetClass nw:Region ;
+  sh:property [
+    sh:path nw:RegionID ;
+    sh:datatype xsd:integer ;
+    sh:name "RegionID" ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:RegionDescription ;
+    sh:datatype xsd:string ;
+    sh:name "RegionDescription" ;
+    sh:minLength 1 ;
+    sh:maxLength 50 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .
+
+# Territories
+nw:TerritoryShape
+  a sh:NodeShape ;
+  sh:targetClass nw:Territories ;
+  sh:property [
+    sh:path nw:TerritoryID ;
+    sh:datatype xsd:string ;
+    sh:name "TerritoryID" ;
+    sh:minLength 1 ;
+    sh:maxLength 20 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:TerritoryDescription ;
+    sh:datatype xsd:string ;
+    sh:name "TerritoryDescription" ;
+    sh:minLength 1 ;
+    sh:maxLength 50 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:RegionID ;
+    sh:name "RegionID" ;
+    sh:class nw:Region ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .
+
+# EmployeeTerritories
+nw:EmployeeTerritoryShape
+  a sh:NodeShape ;
+  sh:targetClass nw:EmployeeTerritories ;
+  sh:property [
+    sh:path nw:EmployeeID ;
+    sh:name "EmployeeID" ;
+    sh:class nw:Employees ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:TerritoryID ;
+    sh:name "TerritoryID" ;
+    sh:class nw:Territories ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .
+
+# CustomerDemographics
+nw:CustomerDemographicsShape
+  a sh:NodeShape ;
+  sh:targetClass nw:CustomerDemographics ;
+  sh:property [
+    sh:path nw:CustomerTypeID ;
+    sh:datatype xsd:string ;
+    sh:name "CustomerTypeID" ;
+    sh:minLength 1 ;
+    sh:maxLength 10 ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:CustomerDesc ;
+    sh:datatype xsd:string ;
+    sh:name "CustomerDesc" ;
+    sh:maxCount 1 ;
+  ] .
+
+# CustomerCustomerDemo
+nw:CustomerCustomerDemoShape
+  a sh:NodeShape ;
+  sh:targetClass nw:CustomerCustomerDemo ;
+  sh:property [
+    sh:path nw:CustomerID ;
+    sh:name "CustomerID" ;
+    sh:class nw:Customers ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path nw:CustomerTypeID ;
+    sh:name "CustomerTypeID" ;
+    sh:class nw:CustomerDemographics ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .
