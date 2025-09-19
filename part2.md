@@ -26,4 +26,4 @@ NorthwindのDDLを拾ってきて、早速Gemimi CLIに[MermaidでER図](https:/
 
 ここからいよいよHuman in the loopの出番で、ビジネスメタを付け加えることでオントロジーを育てていくことになる。まずはその下準備から始めよう。
 
-(Part3につづく)
+[(Part3につづく)](part3.md)

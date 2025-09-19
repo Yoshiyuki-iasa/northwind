@@ -1,7 +1,5 @@
-northwind_ontology_pt3.ttl
 northwind_ontology_pt4.ttl
 northwind_ontology_pt5.ttl
-part3.md
 part4.md
 part5.md
 part6.md
@@ -10,3 +8,5 @@ northwind_entity_architype.md
 northwind_property_SemanticType.md
 import_ttl.py
 display_annotation_tree.py
+sparql_queries.py
+gemini-response.md
