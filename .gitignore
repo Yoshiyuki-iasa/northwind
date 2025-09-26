@@ -1,6 +1,5 @@
-northwind_ontology_pt4.ttl
 northwind_ontology_pt5.ttl
-part4.md
+northwind_ontology_pt6.ttl
 part5.md
 part6.md
 memo.md
@@ -10,3 +9,4 @@ import_ttl.py
 display_annotation_tree.py
 sparql_queries.py
 gemini-response.md
+neo4j_query_table_data.json

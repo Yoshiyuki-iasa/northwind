@@ -135,6 +135,10 @@ nw:Description rdf:type owl:DatatypeProperty ;
   rdfs:domain nw:Categories ;
   rdfs:range xsd:string .
 
+nw:Picture rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Categories ;
+  rdfs:range xsd:base64Binary .
+
 nw:CustomerID_ rdf:type owl:DatatypeProperty ;
   rdfs:domain nw:Customers ;
   rdfs:range xsd:string .

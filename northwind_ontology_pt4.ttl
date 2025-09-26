@@ -418,3 +418,301 @@ ac:Binary rdf:type owl:AnnotationProperty ;
     rdfs:subPropertyOf ac:semanticType ;
     rdfs:comment "画像・音声などのバイナリデータ" ;
     rdfs:label "Binary" .
+
+#################################################################
+#    Entity-level Concepts
+#################################################################
+
+@prefix ent: <http://example.org/entity-concepts#> .
+
+ent:Employees rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Resource;
+    rdfs:label "Employees Concept".
+
+ent:Categories rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Classification;
+    rdfs:label "Categories Concept".
+
+ent:Customers rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Resource;
+    rdfs:label "Customers Concept".
+
+ent:Shippers rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Resource;
+    rdfs:label "Shippers Concept".
+
+ent:Suppliers rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Resource;
+    rdfs:label "Suppliers Concept".
+
+ent:Orders rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Event;
+    rdfs:label "Orders Concept".
+
+ent:Products rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Resource;
+    rdfs:label "Products Concept".
+
+ent:Order_Details rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Association;
+    rdfs:label "Order Details Concept".
+
+ent:Region rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Classification;
+    rdfs:label "Region Concept".
+
+ent:Territories rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Classification;
+    rdfs:label "Territories Concept".
+
+ent:EmployeeTerritories rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Association;
+    rdfs:label "Employee Territories Concept".
+
+ent:CustomerDemographics rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Classification;
+    rdfs:label "Customer Demographics Concept".
+
+ent:CustomerCustomerDemo rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Association;
+    rdfs:label "Customer Customer Demo Concept".
+
+#################################################################
+#    Attribute-level Concepts
+#################################################################
+
+@prefix ac: <http://example.org/attribute-concepts#> .
+
+ac:ReportsTo rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "ReportsTo Concept".
+
+ac:CustomerID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "CustomerID Concept".
+
+ac:EmployeeID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "EmployeeID Concept".
+
+#ac:ShipVia rdf:type owl:AnnotationProperty;
+#    rdfs:subPropertyOf ac:ID;
+#    rdfs:label "ShipVia Concept".
+
+ac:ShipperID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "ShipperID Concept".
+
+ac:SupplierID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "SupplierID Concept".
+
+ac:CategoryID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Classifier;
+    rdfs:label "CategoryID Concept".
+
+ac:OrderID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Sequence;
+    rdfs:label "OrderID Concept".
+
+ac:ProductID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "ProductID Concept".
+
+ac:RegionID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Classifier;
+    rdfs:label "RegionID Concept".
+
+ac:TerritoryID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Classifier;
+    rdfs:label "TerritoryID Concept".
+
+ac:CustomerTypeID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Classifier;
+    rdfs:label "CustomerTypeID Concept".
+
+ac:LastName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "LastName Concept".
+
+ac:FirstName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "FirstName Concept".
+
+ac:Title rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ShortText;
+    rdfs:label "Title Concept".
+
+ac:TitleOfCourtesy rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ShortText;
+    rdfs:label "TitleOfCourtesy Concept".
+
+ac:BirthDate rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:TimeStamp;
+    rdfs:label "BirthDate Concept".
+
+ac:HireDate rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:TimeStamp;
+    rdfs:label "HireDate Concept".
+
+ac:Address rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "Address Concept".
+
+ac:City rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "City Concept".
+
+ac:Region rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "Region Concept".
+
+ac:PostalCode rdf:type owl:AnnotationProperty;
+    #rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:subPropertyOf ac:FormattedText;
+    rdfs:label "PostalCode Concept".
+
+ac:Country rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "Country Concept".
+
+#ac:HomePhone rdf:type owl:AnnotationProperty;
+#    rdfs:subPropertyOf ac:FormattedText;
+#    rdfs:label "HomePhone Concept".
+
+ac:Extension rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ShortText;
+    rdfs:label "Extension Concept".
+
+ac:Notes rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:LongText;
+    rdfs:label "Notes Concept".
+
+ac:PhotoPath rdf:type owl:AnnotationProperty;
+    #rdfs:subPropertyOf ac:ShortText;
+    rdfs:subPropertyOf ac:FormattedText;
+    rdfs:label "PhotoPath Concept".
+
+ac:Picture rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Binary;
+    rdfs:label "Picture Concept".
+
+ac:CategoryName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "CategoryName Concept".
+
+ac:Description rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:LongText;
+    rdfs:label "Description Concept".
+
+ac:CompanyName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "CompanyName Concept".
+
+ac:ContactName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "ContactName Concept".
+
+ac:ContactTitle rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ShortText;
+    rdfs:label "ContactTitle Concept".
+
+ac:Phone rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:FormattedText;
+    rdfs:label "Phone Concept".
+
+ac:Fax rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:FormattedText;
+    rdfs:label "Fax Concept".
+
+ac:HomePage rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:FormattedText;
+    rdfs:label "HomePage Concept".
+
+ac:OrderDate rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:TimeStamp;
+    rdfs:label "OrderDate Concept".
+
+ac:RequiredDate rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:TimeStamp;
+    rdfs:label "RequiredDate Concept".
+
+ac:ShippedDate rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:TimeStamp;
+    rdfs:label "ShippedDate Concept".
+
+ac:Freight rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "Freight Concept".
+
+ac:ShipName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "ShipName Concept".
+
+ac:ShipAddress rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "ShipAddress Concept".
+
+ac:ShipCity rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "ShipCity Concept".
+
+ac:ShipRegion rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "ShipRegion Concept".
+
+ac:ShipPostalCode rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "ShipPostalCode Concept".
+
+ac:ShipCountry rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "ShipCountry Concept".
+
+ac:ProductName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "ProductName Concept".
+
+ac:QuantityPerUnit rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ShortText;
+    rdfs:label "QuantityPerUnit Concept".
+
+ac:UnitPrice rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "UnitPrice Concept".
+
+ac:UnitsInStock rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "UnitsInStock Concept".
+
+ac:UnitsOnOrder rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "UnitsOnOrder Concept".
+
+ac:ReorderLevel rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "ReorderLevel Concept".
+
+ac:Discontinued rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Flag;
+    rdfs:label "Discontinued Concept".
+
+ac:Quantity rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "Quantity Concept".
+
+ac:Discount rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "Discount Concept".
+
+ac:RegionDescription rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:LongText;
+    rdfs:label "RegionDescription Concept".
+
+ac:TerritoryDescription rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:LongText;
+    rdfs:label "TerritoryDescription Concept".
+
+ac:CustomerDesc rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:LongText;
+    rdfs:label "CustomerDesc Concept".
