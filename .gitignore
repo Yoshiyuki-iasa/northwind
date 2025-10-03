@@ -1,12 +1,8 @@
-northwind_ontology_pt5.ttl
 northwind_ontology_pt6.ttl
-part5.md
+northwind_ontology_pt7.ttl
+northwind_ontology_pt8.ttl
 part6.md
+part7.md
+part8.md
 memo.md
-northwind_entity_architype.md
-northwind_property_SemanticType.md
-import_ttl.py
-display_annotation_tree.py
-sparql_queries.py
 gemini-response.md
-neo4j_query_table_data.json

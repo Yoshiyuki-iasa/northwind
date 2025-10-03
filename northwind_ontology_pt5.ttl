@@ -1,0 +1,814 @@
+@prefix : <http://example.org/northwind#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix nw: <http://example.org/northwind#> .
+@prefix arc: <http://example.org/architypes#> .
+@prefix ac: <http://example.org/attribute-concepts#> .
+@prefix ent: <http://example.org/entity-concepts#> .
+
+<http://example.org/northwind> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+nw:ReportsTo rdf:type owl:ObjectProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range nw:Employees ;
+  ac:ReportsTo "true"^^xsd:boolean .
+
+nw:CustomerID rdf:type owl:ObjectProperty ;
+  rdfs:domain nw:Orders, nw:CustomerCustomerDemo ;
+  rdfs:range nw:Customers ;
+  ac:CustomerID "true"^^xsd:boolean .
+
+nw:EmployeeID rdf:type owl:ObjectProperty ;
+  rdfs:domain nw:Orders, nw:EmployeeTerritories ;
+  rdfs:range nw:Employees ;
+  ac:EmployeeID "true"^^xsd:boolean .
+
+nw:ShipVia rdf:type owl:ObjectProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range nw:Shippers ;
+  ac:ShipperID "true"^^xsd:boolean .
+
+nw:SupplierID rdf:type owl:ObjectProperty ;
+  rdfs:domain nw:Products ;
+  rdfs:range nw:Suppliers ;
+  ac:SupplierID "true"^^xsd:boolean .
+
+nw:CategoryID rdf:type owl:ObjectProperty ;
+  rdfs:domain nw:Products ;
+  rdfs:range nw:Categories ;
+  ac:CategoryID "true"^^xsd:boolean .
+
+nw:OrderID rdf:type owl:ObjectProperty ;
+  rdfs:domain nw:Order_Details ;
+  rdfs:range nw:Orders ;
+  ac:OrderID "true"^^xsd:boolean .
+
+nw:ProductID rdf:type owl:ObjectProperty ;
+  rdfs:domain nw:Order_Details ;
+  rdfs:range nw:Products ;
+  ac:ProductID "true"^^xsd:boolean .
+
+nw:RegionID rdf:type owl:ObjectProperty ;
+  rdfs:domain nw:Territories ;
+  rdfs:range nw:Region ;
+  ac:RegionID "true"^^xsd:boolean .
+
+nw:TerritoryID rdf:type owl:ObjectProperty ;
+  rdfs:domain nw:EmployeeTerritories ;
+  rdfs:range nw:Territories ;
+  ac:TerritoryID "true"^^xsd:boolean .
+
+nw:CustomerTypeID rdf:type owl:ObjectProperty ;
+    rdfs:domain nw:CustomerCustomerDemo ;
+    rdfs:range nw:CustomerDemographics ;
+    ac:CustomerTypeID "true"^^xsd:boolean .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+nw:EmployeeID_ rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:integer ;
+  ac:EmployeeID "true"^^xsd:boolean .
+
+nw:LastName rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:string ;
+  ac:LastName "true"^^xsd:boolean .
+
+nw:FirstName rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:string ;
+  ac:FirstName "true"^^xsd:boolean .
+
+nw:Title rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:string ;
+  ac:Title "true"^^xsd:boolean .
+
+nw:TitleOfCourtesy rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:string ;
+  ac:TitleOfCourtesy "true"^^xsd:boolean .
+
+nw:BirthDate rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:dateTime ;
+  ac:BirthDate "true"^^xsd:boolean .
+
+nw:HireDate rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:dateTime ;
+  ac:HireDate "true"^^xsd:boolean .
+
+nw:Address rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees, nw:Customers, nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:Address "true"^^xsd:boolean .
+
+nw:City rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees, nw:Customers, nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:City "true"^^xsd:boolean .
+
+nw:Region rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees, nw:Customers, nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:Region "true"^^xsd:boolean .
+
+nw:PostalCode rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees, nw:Customers, nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:PostalCode "true"^^xsd:boolean .
+
+nw:Country rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees, nw:Customers, nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:Country "true"^^xsd:boolean .
+
+nw:HomePhone rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:string ;
+  #ac:HomePhone "true"^^xsd:boolean .
+  ac:Phone "true"^^xsd:boolean .
+
+nw:Extension rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:string ;
+  ac:Extension "true"^^xsd:boolean .
+
+nw:Notes rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:string ;
+  ac:Notes "true"^^xsd:boolean .
+
+nw:PhotoPath rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Employees ;
+  rdfs:range xsd:string ;
+  ac:PhotoPath "true"^^xsd:boolean .
+
+nw:CategoryID_ rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Categories ;
+  rdfs:range xsd:integer ;
+  ac:CategoryID "true"^^xsd:boolean .
+
+nw:CategoryName rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Categories ;
+  rdfs:range xsd:string ;
+  ac:CategoryName "true"^^xsd:boolean .
+
+nw:Description rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Categories ;
+  rdfs:range xsd:string ;
+  ac:Description "true"^^xsd:boolean .
+
+nw:Picture rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Categories ;
+  rdfs:range xsd:base64Binary ;
+  ac:Picture "true"^^xsd:boolean .
+
+nw:CustomerID_ rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Customers ;
+  rdfs:range xsd:string ;
+  ac:CustomerID "true"^^xsd:boolean .
+
+nw:CompanyName rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Customers, nw:Shippers, nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:CompanyName "true"^^xsd:boolean .
+
+nw:ContactName rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Customers, nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:ContactName "true"^^xsd:boolean .
+
+nw:ContactTitle rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Customers, nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:ContactTitle "true"^^xsd:boolean .
+
+nw:Phone rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Customers, nw:Shippers, nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:Phone "true"^^xsd:boolean .
+
+nw:Fax rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Customers, nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:Fax "true"^^xsd:boolean .
+
+nw:ShipperID_ rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Shippers ;
+  rdfs:range xsd:integer ;
+  ac:ShipperID "true"^^xsd:boolean .
+
+nw:SupplierID_ rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Suppliers ;
+  rdfs:range xsd:integer ;
+  ac:SupplierID "true"^^xsd:boolean .
+
+nw:HomePage rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Suppliers ;
+  rdfs:range xsd:string ;
+  ac:HomePage "true"^^xsd:boolean .
+
+nw:OrderID_ rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:integer ;
+  ac:OrderID "true"^^xsd:boolean .
+
+nw:OrderDate rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:dateTime ;
+  ac:OrderDate "true"^^xsd:boolean .
+
+nw:RequiredDate rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:dateTime ;
+  ac:RequiredDate "true"^^xsd:boolean .
+
+nw:ShippedDate rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:dateTime ;
+  ac:ShippedDate "true"^^xsd:boolean .
+
+nw:Freight rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:decimal ;
+  ac:Freight "true"^^xsd:boolean .
+
+nw:ShipName rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:string ;
+  ac:ShipName "true"^^xsd:boolean .
+
+nw:ShipAddress rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:string ;
+  ac:ShipAddress "true"^^xsd:boolean .
+
+nw:ShipCity rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:string ;
+  ac:ShipCity "true"^^xsd:boolean .
+
+nw:ShipRegion rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:string ;
+  ac:ShipRegion "true"^^xsd:boolean .
+
+nw:ShipPostalCode rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:string ;
+  ac:ShipPostalCode "true"^^xsd:boolean .
+
+nw:ShipCountry rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Orders ;
+  rdfs:range xsd:string ;
+  ac:ShipCountry "true"^^xsd:boolean .
+
+nw:ProductID_ rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Products ;
+  rdfs:range xsd:integer ;
+  ac:ProductID "true"^^xsd:boolean .
+
+nw:ProductName rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Products ;
+  rdfs:range xsd:string ;
+  ac:ProductName "true"^^xsd:boolean .
+
+nw:QuantityPerUnit rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Products ;
+  rdfs:range xsd:string ;
+  ac:QuantityPerUnit "true"^^xsd:boolean .
+
+nw:UnitPrice rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Products, nw:Order_Details ;
+  rdfs:range xsd:decimal ;
+  ac:UnitPrice "true"^^xsd:boolean .
+
+nw:UnitsInStock rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Products ;
+  rdfs:range xsd:short ;
+  ac:UnitsInStock "true"^^xsd:boolean .
+
+nw:UnitsOnOrder rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Products ;
+  rdfs:range xsd:short ;
+  ac:UnitsOnOrder "true"^^xsd:boolean .
+
+nw:ReorderLevel rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Products ;
+  rdfs:range xsd:short ;
+  ac:ReorderLevel "true"^^xsd:boolean .
+
+nw:Discontinued rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Products ;
+  rdfs:range xsd:boolean ;
+  ac:Discontinued "true"^^xsd:boolean .
+
+nw:Quantity rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Order_Details ;
+  rdfs:range xsd:short ;
+  ac:Quantity "true"^^xsd:boolean .
+
+nw:Discount rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Order_Details ;
+  rdfs:range xsd:float ;
+  ac:Discount "true"^^xsd:boolean .
+
+nw:RegionID_ rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Region ;
+  rdfs:range xsd:integer ;
+  ac:RegionID "true"^^xsd:boolean .
+
+nw:RegionDescription rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Region ;
+  rdfs:range xsd:string ;
+  ac:RegionDescription "true"^^xsd:boolean .
+
+nw:TerritoryID_ rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Territories ;
+  rdfs:range xsd:string ;
+  ac:TerritoryID "true"^^xsd:boolean .
+
+nw:TerritoryDescription rdf:type owl:DatatypeProperty ;
+  rdfs:domain nw:Territories ;
+  rdfs:range xsd:string ;
+  ac:TerritoryDescription "true"^^xsd:boolean .
+
+nw:CustomerTypeID_ rdf:type owl:DatatypeProperty ;
+    rdfs:domain nw:CustomerDemographics ;
+    rdfs:range xsd:string ;
+    ac:CustomerTypeID "true"^^xsd:boolean .
+
+nw:CustomerDesc rdf:type owl:DatatypeProperty ;
+    rdfs:domain nw:CustomerDemographics ;
+    rdfs:range xsd:string ;
+    ac:CustomerDesc "true"^^xsd:boolean .
+
+#################################################################
+#    Classes
+#################################################################
+
+nw:Employees rdf:type owl:Class ;
+    ent:Employees "true"^^xsd:boolean .
+
+nw:Categories rdf:type owl:Class ;
+    ent:Categories "true"^^xsd:boolean .
+
+nw:Customers rdf:type owl:Class ;
+    ent:Customers "true"^^xsd:boolean .
+
+nw:Shippers rdf:type owl:Class ;
+    ent:Shippers "true"^^xsd:boolean .
+
+nw:Suppliers rdf:type owl:Class ;
+    ent:Suppliers "true"^^xsd:boolean .
+
+nw:Orders rdf:type owl:Class ;
+    ent:Orders "true"^^xsd:boolean .
+
+nw:Products rdf:type owl:Class ;
+    ent:Products "true"^^xsd:boolean .
+
+nw:Order_Details rdf:type owl:Class ;
+    ent:Order_Details "true"^^xsd:boolean .
+
+nw:Region rdf:type owl:Class ;
+    ent:Region "true"^^xsd:boolean .
+
+nw:Territories rdf:type owl:Class ;
+    ent:Territories "true"^^xsd:boolean .
+
+nw:EmployeeTerritories rdf:type owl:Class ;
+    ent:EmployeeTerritories "true"^^xsd:boolean .
+
+nw:CustomerDemographics rdf:type owl:Class ;
+    ent:CustomerDemographics "true"^^xsd:boolean .
+
+nw:CustomerCustomerDemo rdf:type owl:Class ;
+    ent:CustomerCustomerDemo "true"^^xsd:boolean .
+
+#################################################################
+#    Entity Concepts (Architypes)
+#################################################################
+
+@prefix arc: <http://example.org/architypes#> .
+
+arc:architype rdf:type owl:AnnotationProperty ;
+    rdfs:label "Architype root" .
+
+arc:Resource rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf arc:architype ;
+    rdfs:comment "主語または目的語となる名詞の集合。顧客、従業員、商品、勘定科目など。" ;
+    rdfs:label "Resource" .
+
+arc:Event rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf arc:architype ;
+    rdfs:comment "時間と共に発生する状態変化の記録。受注や出荷。" ;
+    rdfs:label "Event" .
+
+arc:Classification rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf arc:architype ;
+    rdfs:comment "MECEな概念の集合。国、都道府県、ステータスなど。" ;
+    rdfs:label "Classification" .
+
+arc:Rule rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf arc:architype ;
+    rdfs:comment "振る舞いを規定するための複数の概念のあらかじめ定められた組み合わせ。値引きルール、返品ルールなど。" ;
+    rdfs:label "Rule" .
+
+arc:Summary rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf arc:architype ;
+    rdfs:comment "別のデータセットから導出された集計結果。総勘定元帳など。" ;
+    rdfs:label "Summary" .
+
+arc:Association rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf arc:architype ;
+    rdfs:comment "複数のエンティティ間の関係についての事実。営業テリトリーと営業員など。" ;
+    rdfs:label "Association" .
+
+#################################################################
+#    Attribute Concepts (Semantic Types)
+#################################################################
+
+@prefix ac: <http://example.org/attribute-concepts#> .
+
+ac:semanticType rdf:type owl:AnnotationProperty ;
+    rdfs:label "Semantic Type root" .
+
+ac:ID rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "リソースのキー" ;
+    rdfs:label "Identifier" .
+
+ac:Sequence rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "イベントのキー" ;
+    rdfs:label "Sequence" .
+
+ac:Classifier rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "分類のキー" ;
+    rdfs:label "Classifier" .
+
+ac:Enum rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "分類テーブルがない (リテラル) 区分値" ;
+    rdfs:label "Enum" .
+
+ac:Flag rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "区分値または列挙子のうち、特に真偽二値のみのもの" ;
+    rdfs:label "Flag" .
+
+ac:Name rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "識別子または区分値の名称" ;
+    rdfs:label "Name" .
+
+ac:NumValue rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "単位を伴い計算可能な、時刻・時間以外の数値" ;
+    rdfs:label "NumValue" .
+
+ac:TimeStamp rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "時間軸上の一点を示す値" ;
+    rdfs:label "TimeStamp" .
+
+ac:Duration rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "時間軸上の二点間の間隔を示す値" ;
+    rdfs:label "Duration" .
+
+ac:ShortText rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "汎用的な短い文字列" ;
+    rdfs:label "ShortText" .
+
+ac:LongText rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "自由記述の文章" ;
+    rdfs:label "LongText" .
+
+ac:FormattedText rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "特定の様式を伴う文字列" ;
+    rdfs:label "FormattedText" .
+
+ac:AddressComponent rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "住所を構成する文字要素" ;
+    rdfs:label "AddressComponent" .
+
+ac:Binary rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf ac:semanticType ;
+    rdfs:comment "画像・音声などのバイナリデータ" ;
+    rdfs:label "Binary" .
+
+#################################################################
+#    Entity-level Concepts
+#################################################################
+
+@prefix ent: <http://example.org/entity-concepts#> .
+
+ent:Employees rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Resource;
+    rdfs:label "Employees Concept".
+
+ent:Categories rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Classification;
+    rdfs:label "Categories Concept".
+
+ent:Customers rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Resource;
+    rdfs:label "Customers Concept".
+
+ent:Shippers rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Resource;
+    rdfs:label "Shippers Concept".
+
+ent:Suppliers rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Resource;
+    rdfs:label "Suppliers Concept".
+
+ent:Orders rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Event;
+    rdfs:label "Orders Concept".
+
+ent:Products rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Resource;
+    rdfs:label "Products Concept".
+
+ent:Order_Details rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Association;
+    rdfs:label "Order Details Concept".
+
+ent:Region rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Classification;
+    rdfs:label "Region Concept".
+
+ent:Territories rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Classification;
+    rdfs:label "Territories Concept".
+
+ent:EmployeeTerritories rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Association;
+    rdfs:label "Employee Territories Concept".
+
+ent:CustomerDemographics rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Classification;
+    rdfs:label "Customer Demographics Concept".
+
+ent:CustomerCustomerDemo rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf arc:Association;
+    rdfs:label "Customer Customer Demo Concept".
+
+#################################################################
+#    Attribute-level Concepts
+#################################################################
+
+@prefix ac: <http://example.org/attribute-concepts#> .
+
+ac:ReportsTo rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "ReportsTo Concept".
+
+ac:CustomerID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "CustomerID Concept".
+
+ac:EmployeeID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "EmployeeID Concept".
+
+#ac:ShipVia rdf:type owl:AnnotationProperty;
+#    rdfs:subPropertyOf ac:ID;
+#    rdfs:label "ShipVia Concept".
+
+ac:ShipperID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "ShipperID Concept".
+
+ac:SupplierID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "SupplierID Concept".
+
+ac:CategoryID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Classifier;
+    rdfs:label "CategoryID Concept".
+
+ac:OrderID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Sequence;
+    rdfs:label "OrderID Concept".
+
+ac:ProductID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ID;
+    rdfs:label "ProductID Concept".
+
+ac:RegionID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Classifier;
+    rdfs:label "RegionID Concept".
+
+ac:TerritoryID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Classifier;
+    rdfs:label "TerritoryID Concept".
+
+ac:CustomerTypeID rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Classifier;
+    rdfs:label "CustomerTypeID Concept".
+
+ac:LastName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "LastName Concept".
+
+ac:FirstName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "FirstName Concept".
+
+ac:Title rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ShortText;
+    rdfs:label "Title Concept".
+
+ac:TitleOfCourtesy rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ShortText;
+    rdfs:label "TitleOfCourtesy Concept".
+
+ac:BirthDate rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:TimeStamp;
+    rdfs:label "BirthDate Concept".
+
+ac:HireDate rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:TimeStamp;
+    rdfs:label "HireDate Concept".
+
+ac:Address rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "Address Concept".
+
+ac:City rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "City Concept".
+
+ac:Region rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "Region Concept".
+
+ac:PostalCode rdf:type owl:AnnotationProperty;
+    #rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:subPropertyOf ac:FormattedText;
+    rdfs:label "PostalCode Concept".
+
+ac:Country rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "Country Concept".
+
+#ac:HomePhone rdf:type owl:AnnotationProperty;
+#    rdfs:subPropertyOf ac:FormattedText;
+#    rdfs:label "HomePhone Concept".
+
+ac:Extension rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ShortText;
+    rdfs:label "Extension Concept".
+
+ac:Notes rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:LongText;
+    rdfs:label "Notes Concept".
+
+ac:PhotoPath rdf:type owl:AnnotationProperty;
+    #rdfs:subPropertyOf ac:ShortText;
+    rdfs:subPropertyOf ac:FormattedText;
+    rdfs:label "PhotoPath Concept".
+
+ac:Picture rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Binary;
+    rdfs:label "Picture Concept".
+
+ac:CategoryName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "CategoryName Concept".
+
+ac:Description rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:LongText;
+    rdfs:label "Description Concept".
+
+ac:CompanyName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "CompanyName Concept".
+
+ac:ContactName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "ContactName Concept".
+
+ac:ContactTitle rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ShortText;
+    rdfs:label "ContactTitle Concept".
+
+ac:Phone rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:FormattedText;
+    rdfs:label "Phone Concept".
+
+ac:Fax rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:FormattedText;
+    rdfs:label "Fax Concept".
+
+ac:HomePage rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:FormattedText;
+    rdfs:label "HomePage Concept".
+
+ac:OrderDate rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:TimeStamp;
+    rdfs:label "OrderDate Concept".
+
+ac:RequiredDate rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:TimeStamp;
+    rdfs:label "RequiredDate Concept".
+
+ac:ShippedDate rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:TimeStamp;
+    rdfs:label "ShippedDate Concept".
+
+ac:Freight rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "Freight Concept".
+
+ac:ShipName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "ShipName Concept".
+
+ac:ShipAddress rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "ShipAddress Concept".
+
+ac:ShipCity rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "ShipCity Concept".
+
+ac:ShipRegion rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "ShipRegion Concept".
+
+ac:ShipPostalCode rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "ShipPostalCode Concept".
+
+ac:ShipCountry rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:AddressComponent;
+    rdfs:label "ShipCountry Concept".
+
+ac:ProductName rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Name;
+    rdfs:label "ProductName Concept".
+
+ac:QuantityPerUnit rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:ShortText;
+    rdfs:label "QuantityPerUnit Concept".
+
+ac:UnitPrice rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "UnitPrice Concept".
+
+ac:UnitsInStock rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "UnitsInStock Concept".
+
+ac:UnitsOnOrder rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "UnitsOnOrder Concept".
+
+ac:ReorderLevel rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "ReorderLevel Concept".
+
+ac:Discontinued rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:Flag;
+    rdfs:label "Discontinued Concept".
+
+ac:Quantity rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "Quantity Concept".
+
+ac:Discount rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:NumValue;
+    rdfs:label "Discount Concept".
+
+ac:RegionDescription rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:LongText;
+    rdfs:label "RegionDescription Concept".
+
+ac:TerritoryDescription rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:LongText;
+    rdfs:label "TerritoryDescription Concept".
+
+ac:CustomerDesc rdf:type owl:AnnotationProperty;
+    rdfs:subPropertyOf ac:LongText;
+    rdfs:label "CustomerDesc Concept".
