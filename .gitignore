@@ -1,9 +1,5 @@
-northwind_ontology_pt7.ttl
 northwind_ontology_pt8.ttl
-part7.md
 part8.md
 part9.md
-memo.md
+memo_pt9.md
 gemini-response.md
-insert_northwind_schema.sparql
-load_northwind_schema.ipynb

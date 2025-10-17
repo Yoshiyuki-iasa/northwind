@@ -5,4 +5,5 @@
 - [Part 4](part4.md)
 - [Part 5](part5.md)
 - [Part 6](part6.md)
-- Part 7
+- [Part 7](part7.md)
+- Part 8
