@@ -84,4 +84,4 @@ ac-cat:Condiments rdf:type owl:AnnotationProperty;
 
 さて、RDFファイルをNeo4jへインポートできることは分かった。しかしNeo4jはSPARQLが使えないし、本業のLPGの傍らRDFもやってます、という感じが否めない。SPARQLをお手軽に試す方法は無いものだろうか？
 
-(Part9につづく)
+([Part9につづく](part9.md))
