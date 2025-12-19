@@ -45,6 +45,7 @@ PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
 まず、SHACLの語彙`sh:PrefixDeclaration`を使い、プレフィクス`ac:`と名前空間`http://example.org/attribute-concepts#`の1ペアを`INSERT`する。FusekiのWebUIはデータを読むためのものなので、`INSERT`文は`update`用のSPARQLエンドポイントに`curl`コマンドで`POST`する。
 
 - curlでINSERT
+
 ```Powershell
 curl "-X" "POST" `
   "-H" "Content-Type: application/sparql-update" `
@@ -63,9 +64,11 @@ INSERT DATA {
   "http://localhost:3030/northwind/update"
 
 ```
+
 エラーが出なければ、今度はWebUIで`SELECT`を実行し結果を確認する
 
 - FusekiのWebUIでSELECT
+
 ```SPARQL
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -85,6 +88,7 @@ SELECT ?prefix ?namespace WHERE {
 素晴らしい。`sh:PrefixDeclaration`が効いたのを確認できたので、ここにさらにラベルとコメントをつけ足す。ラベルやコメントの内容はとりあえずGenAIに適当に書いてもらうが、本来は人間の役割ではある。
 
 - `label`と`comment`を追加
+
 ```powershell
 curl "-X" "POST" `
   "-H" "Content-Type: application/sparql-update" `
@@ -107,6 +111,7 @@ INSERT DATA {
 結果をブラウザでも見てみよう。
 
 - WebUIでSELECT
+
 ```SPARQL
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -131,6 +136,7 @@ WHERE {
 残りの分も同様にFusekiに`INSERT`してしまい、結果を確認する (クエリ文は最初の`ac:`の確認で使ったものと同様だが、プレフィクスを使って少しシンプルになっている)
 
 - SHACLによるプレフィクスと名前空間のペアのクエリ
+
 ```SPARQL
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 SELECT ?prefix ?namespace
@@ -152,6 +158,7 @@ WHERE {
 | nw | http://example.org/northwind# |
 
 - 名前空間のラベルとコメントのクエリ
+
 ```SPARQL
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -185,4 +192,4 @@ W3Cのおかげで可搬性も相互運用性も心配無用で、個人的に�
 
 今のトリプルカウントは767になった。次回はSPARQLクエリでその中身を解き明かしていこう。
 
-(Part12につづく)
+([Part12につづく](part12.md))
