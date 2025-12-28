@@ -61,7 +61,7 @@ meta:hasEntityConcept
         rdfs:label  "has entity concept" .
 ```
 
-ここではトリプルがふたつ書かれている。最初の行が共通の主語、2行目と3行目にそれぞれ述語と目的語が書かれている (また2行目の目的語はリソース、3行目はリテラルであることもわかる)。この「上のコードブロックで囲った部分」を「プロパティ・リスト」とか「リソース記述」とか呼ぶそうである。これをSPARQLで抜く ("Selection of triple"のクエリの最初に`PREFIX meta: <https://krr.triply.cc/krr/sameas-meta/def/>`、`WHERE`句の下に`BIND (meta:hasEntityConcept AS ?subject)`を追加する) とこうなる。
+ここではトリプルがふたつ書かれている。最初の行が共通の主語、2行目と3行目にそれぞれ述語と目的語が書かれている (また2行目の目的語はリソース、3行目はリテラルであることもわかる)。この「上のコードブロックで囲った部分」を「プロパティ・リスト」とか「リソース記述」とか呼ぶそうである。これをSPARQLで抜く ("Selection of triple"のクエリの最初に`PREFIX meta: <http://example.org/meta#>`、`WHERE`句の下に`BIND (meta:hasEntityConcept AS ?subject)`を追加する) とこうなる。
 
 | subject | predicate | object |
 |---|---|---|
@@ -74,4 +74,4 @@ meta:hasEntityConcept
 
 RDFの世界で「目に見えるものが何で」「それがどんな意味か」について、クラスとリテラルは大体わかったような気がする。しかしプロパティはもう少し掘る必要があるのでこれを次回取り上げることにしよう。
 
-(Part13につづく)
+([Part13につづく](part13.md))
