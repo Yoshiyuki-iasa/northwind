@@ -157,4 +157,4 @@ meta:hasAttributeConcept
 
 今回はturtleファイル上でトリプルの例を観察したわけだが、次回は複数のリソースなりトリプルなりをSPARQLで抽出してみよう。RDFのキホンが大体解ったところで、次はSPARQLのキホンである。
 
-(Part14につづく)
+([Part14につづく](part14.md))
