@@ -17,4 +17,7 @@
 - [Psrt 16](part16.md)
 - [Part 17](part17.md)
 - [Part 18](part18.md)
-- Part 19
+- [Part 19](part19.md)
+- [Part 20](part20.md)
+- Part 21
+- Part 22
