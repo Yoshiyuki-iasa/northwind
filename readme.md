@@ -19,5 +19,8 @@
 - [Part 18](part18.md)
 - [Part 19](part19.md)
 - [Part 20](part20.md)
-- Part 21
-- Part 22
+- [Part 21](part21.md)
+- [Part 22](part22.md)
+- Part 23
+- Part 24
+
