@@ -24,6 +24,7 @@
 - [Part 23](part23.md)
 - [Part 24](part24.md)
 - [Part 25](part25.md)
-- Part 26
+- [Part 26](part26.md)
+- Part 27
 
 
