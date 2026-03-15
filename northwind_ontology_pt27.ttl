@@ -1,0 +1,136 @@
+@prefix : <http://example.org/northwind#> .
+@prefix nw: <http://example.org/northwind#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gist: <https://w3id.org/semanticarts/ns/ontology/gist/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://example.org/northwind#> .
+
+<http://example.org/northwind> rdf:type owl:Ontology ;
+                                owl:imports <https://w3id.org/semanticarts/ontology/gistCore14.0.0> .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/northwind#Categories
+nw:Categories rdf:type owl:Class ;
+              rdfs:subClassOf gist:ProductCategory .
+
+
+###  http://example.org/northwind#CustomerCustomerDemo
+nw:CustomerCustomerDemo rdf:type owl:Class ;
+                        rdfs:subClassOf gist:Assignment ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty gist:isAssignmentOf ;
+                                          owl:someValuesFrom nw:Customers
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty gist:isAssignmentTo ;
+                                          owl:someValuesFrom nw:CustomerDemographics
+                                        ] .
+
+
+###  http://example.org/northwind#CustomerDemographics
+nw:CustomerDemographics rdf:type owl:Class ;
+                        rdfs:subClassOf gist:Category .
+
+
+###  http://example.org/northwind#Customers
+nw:Customers rdf:type owl:Class ;
+             rdfs:subClassOf gist:Organization .
+
+
+###  http://example.org/northwind#EmployeeTerritories
+nw:EmployeeTerritories rdf:type owl:Class ;
+                       rdfs:subClassOf gist:Assignment ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty gist:isAssignmentOf ;
+                                         owl:someValuesFrom nw:Employees
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty gist:isAssignmentTo ;
+                                         owl:someValuesFrom nw:Territories
+                                       ] .
+
+
+###  http://example.org/northwind#Employees
+nw:Employees rdf:type owl:Class ;
+             rdfs:subClassOf gist:Person ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty gist:isGovernedBy ;
+                               owl:allValuesFrom nw:Employees
+                             ] .
+
+
+###  http://example.org/northwind#OrderDetails
+nw:OrderDetails rdf:type owl:Class ;
+                rdfs:subClassOf gist:Commitment ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty gist:isAbout ;
+                                  owl:someValuesFrom nw:Products
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty gist:isDirectPartOf ;
+                                  owl:someValuesFrom nw:Orders
+                                ] .
+
+
+###  http://example.org/northwind#Orders
+nw:Orders rdf:type owl:Class ;
+          rdfs:subClassOf gist:Agreement ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty gist:comesFromAgent ;
+                            owl:someValuesFrom nw:Shippers
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty gist:hasParticipant ;
+                            owl:someValuesFrom nw:Employees
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty gist:hasParty ;
+                            owl:someValuesFrom nw:Customers
+                          ] .
+
+
+###  http://example.org/northwind#Products
+nw:Products rdf:type owl:Class ;
+            rdfs:subClassOf gist:ProductSpecification ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty gist:comesFromAgent ;
+                              owl:someValuesFrom nw:Suppliers
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty gist:isCategorizedBy ;
+                              owl:someValuesFrom nw:Categories
+                            ] .
+
+
+###  http://example.org/northwind#Region
+nw:Region rdf:type owl:Class ;
+          rdfs:subClassOf gist:GeoRegion .
+
+
+###  http://example.org/northwind#Shippers
+nw:Shippers rdf:type owl:Class ;
+            rdfs:subClassOf gist:Organization .
+
+
+###  http://example.org/northwind#Suppliers
+nw:Suppliers rdf:type owl:Class ;
+             rdfs:subClassOf gist:Organization .
+
+
+###  http://example.org/northwind#Territories
+nw:Territories rdf:type owl:Class ;
+               rdfs:subClassOf gist:GeoRegion ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty gist:isGeoContainedIn ;
+                                 owl:someValuesFrom nw:Region
+                               ] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

@@ -127,4 +127,4 @@ Reasonerを一旦止めて`:teaches`を`gist:contributesTo`、`:isTaughtBy`を`g
 
 次回も引き続きgistを深堀りする。northwindの復活である。
 
-(Part27に続く)
+([Part27に続く](part27.md))

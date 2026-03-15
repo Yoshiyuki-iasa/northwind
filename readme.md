@@ -25,6 +25,6 @@
 - [Part 24](part24.md)
 - [Part 25](part25.md)
 - [Part 26](part26.md)
-- Part 27
-
+- [Part 27](part27.md)
+- Part 28
 
